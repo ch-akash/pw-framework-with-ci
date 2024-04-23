@@ -1,0 +1,12 @@
+Features required to be in framework:
+
+1. POM - Page Objects
+2. Utils - 
+    2.1 Mocking Util - Class to store mock data
+    2.2 Visual Test Util - Class for comparing/updating screenshots
+    2.3 FileUtil - Manage upload, download and read file functions
+    2.4 TestDataHelper - To create random test data 
+3. Generate HTML reports with videos/screenshots
+4. CI - Jenkins, Github Actions as well Docker
+5. Fixtures - Classes to maintain fixtures for auto-init page Objects
+6. Enums - To store tags and annotations which are predefined and reusable. 
