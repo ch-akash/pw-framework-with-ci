@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
-                        sh 'npx playwright test'
+                        sh "npx playwright test ${additionalCommandOptions}"
                     }
                 }
             }
