@@ -25,14 +25,17 @@ pipeline {
         stage('Reports') {
             steps {
                 script {
-                    publishHTML([allowMissing          : true,
-                                 alwaysLinkToLastBuild : false,
-                                 keepAll               : true,
-                                 reportDir             : 'playwright-report',
-                                 reportFiles           : 'index.html',
-                                 reportName            : 'HTML Report',
-                                 reportTitles          : '',
-                                 useWrapperFileDirectly: true])
+                    allure includeProperties:
+                            false, jdk: '',
+                            results: [[path: 'allure-results']]
+//                    publishHTML([allowMissing          : true,
+//                                 alwaysLinkToLastBuild : false,
+//                                 keepAll               : true,
+//                                 reportDir             : 'playwright-report',
+//                                 reportFiles           : 'index.html',
+//                                 reportName            : 'HTML Report',
+//                                 reportTitles          : '',
+//                                 useWrapperFileDirectly: true])
                 }
             }
         }
