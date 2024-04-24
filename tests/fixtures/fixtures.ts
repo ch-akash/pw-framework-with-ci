@@ -32,8 +32,11 @@ export const loggedInTest = baseTest.extend<{ basePage: BasePage }>({
       username
     );
 
-    //The user is logged in. Save this session data to the file
-    await page.context().storageState({ path: authFile });
+    // The user is logged in. Save this session data to the file.
+    // For the tests that require logged across test classes, we can
+    // use storageState. Using storage state will log in ALL the tests.
+    // Even if they do not need to be logged in.
+    // await page.context().storageState({ path: authFile });
 
     await use(new BasePage(page));
   },
@@ -76,9 +79,6 @@ export const newUserTest = baseTest.extend<{ basePage: BasePage }>({
     await expect(await basePage.searchPage.getHeaderLocator()).toContainText(
       newUserName
     );
-
-    //The user is logged in. Save this session data to the file
-    await page.context().storageState({ path: authFile });
 
     await use(new BasePage(page));
   },
