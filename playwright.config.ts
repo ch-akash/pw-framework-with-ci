@@ -23,7 +23,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 5,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ["html"],
+    ["html", { open: "never" }],
     ["list"],
     ["allure-playwright"],
     // [
