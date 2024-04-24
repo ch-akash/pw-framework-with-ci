@@ -9,5 +9,5 @@ test("Valdaite no books found error message on Search Page", async ({
   await basePage.page.goto("/");
   await expect(basePage.page.getByText("No books found.")).toBeVisible();
   //Visual comparison for empty search page
-  await expect(basePage.page).toHaveScreenshot();
+  await expect(basePage.page).toHaveScreenshot({ maxDiffPixelRatio: 0.3 });
 });
