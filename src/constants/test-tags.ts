@@ -10,4 +10,5 @@ export enum TestTags {
   SEARCH_PAGE = "@srp",
   AUTO_SUGGESTIONS = "@auto-suggestions",
   CSV_DATA_DRIVEN = "@csv-data-driven",
+  LIGHTHOUSE_AUDIT = "@lighthouse",
 }
